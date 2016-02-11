@@ -1,9 +1,11 @@
 var path = require("path");
+var webpack = require('webpack');
+
 module.exports = {
   entry: './components/app.jsx',
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: "/",
+    publicPath: "/assets/",
     filename: "bundle.js"
   },
   module: {
@@ -18,6 +20,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      'React': 'react'
+    })
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   }

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const newTodo = ({onChange}) => (
   <div>
     <h3>New</h3>
